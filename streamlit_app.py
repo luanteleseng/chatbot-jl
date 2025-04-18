@@ -2,9 +2,9 @@ import streamlit as st
 from openai import OpenAI
 
 # Show title and description.
-st.title("Agente do Luanzinho")
+st.title("Agente do Luanzinho 😎")
 st.write(
-    "Pergunte qualquer coisa e eu posso te ajudar! Sou o brabo da Engenharia de Dados"
+    "Pergunte qualquer coisa sobre Engenharia de Dados e eu posso te ajudar!"
 )
 
 # Ask user for their OpenAI API key via `st.text_input`.
