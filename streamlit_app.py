@@ -21,17 +21,17 @@ else:
     # Create a session state variable to store the chat messages. This ensures that the
     # messages persist across reruns.
     if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-    # Adiciona system prompt na inicialização
-    st.session_state.messages.append({
-        "role": "system",
-        "content": (
-            "Você é um assistente especialista em Engenharia de Dados. "
-            "Responda perguntas sobre ETL, pipelines, bancos de dados, BigQuery, Kafka, Spark, modelagem de dados, arquitetura de dados, e cloud (GCP, AWS, Azure). "
-            "Seja claro, técnico, direto e sempre em português. Dê exemplos de código quando possível."
-        )
-    })
+        st.session_state.messages = []
+    
+        # Adiciona system prompt na inicialização
+        st.session_state.messages.append({
+            "role": "system",
+            "content": (
+                "Você é um assistente especialista em Engenharia de Dados. "
+                "Responda perguntas sobre ETL, pipelines, bancos de dados, BigQuery, Kafka, Spark, modelagem de dados, arquitetura de dados, e cloud (GCP, AWS, Azure). "
+                "Seja claro, técnico, direto e sempre em português. Dê exemplos de código quando possível."
+            )
+        })
 
     # Display the existing chat messages via `st.chat_message`.
     for message in st.session_state.messages:
