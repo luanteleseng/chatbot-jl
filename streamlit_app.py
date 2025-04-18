@@ -37,10 +37,18 @@ else:
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Generate a response using the OpenAI API.
+        system_message = {
+            "role": "system",
+            "content": (
+                "Você é um assistente especialista em Engenharia de Dados. "
+                "Você responde perguntas sobre ETL, pipelines, bancos de dados, BigQuery, Kafka, Spark, modelagem de dados, arquitetura de dados, cloud (GCP, AWS, Azure), e boas práticas. "
+                "Seja claro, objetivo e use exemplos quando possível. Responda em português, a menos que o usuário peça o contrário."
+            )
+        }
+        
         stream = client.chat.completions.create(
             model="gpt-3.5-turbo",
-            messages=[
+            messages=[system_message] + [
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
             ],
